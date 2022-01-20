@@ -128,7 +128,8 @@ This infrastructure is deployed using several Terraform files:
 
 The Terraform file ./terraform/datafactory/main.tf is the main file which will launch the deployment calling the datafactory module.
 
-```json
+```hcl
+
     provider "azurerm" {
       features {}
     }
@@ -154,8 +155,7 @@ The Terraform file ./terraform/datafactory/main.tf is the main file which will l
 The datafactory module which will deploy the resource group, the data factory account, the storage account and the containers.
 Moreover, this terraform file will create the input and output linked services calling the datafactory_linked_service module.
 
-
-```json
+```hcl
     provider "azurerm" {
       features {}
     }
@@ -269,7 +269,7 @@ Moreover, this terraform file will create the input and output linked services c
 
 The datafactory_linked_service module which will create the linked service using the Azure datafactory CLI bash file update_linked_service.sh to create the linked service.
 
-```json
+```hcl
     terraform {
       required_version = ">= 1.0.0"
     }
@@ -337,8 +337,6 @@ The datafactory_linked_service module which will create the linked service using
     }
 ```
 
-
-
 ## Deploying Azure Data Share
 
 Now the pre-requisites are installed, we can test the deployment of the Data Share infrastructure with the bash file: ./scripts/terraform-azure-data-share-deploy.sh.
@@ -375,7 +373,7 @@ The infrastructure is deployed using several Terraform files.
 
 The Terraform file ./terraform/datashare/main.tf is the main file which will launch the deployment calling the datashare module.
 
-```json
+```hcl
     provider "azurerm" {
       features {}
     }
@@ -400,7 +398,7 @@ The Terraform file ./terraform/datashare/main.tf is the main file which will lau
 
 The datashare module which will deploy the resource group, the data share account, the storage account and the containers.
 
-```json
+```hcl
     provider "azurerm" {
       features {}
     }
